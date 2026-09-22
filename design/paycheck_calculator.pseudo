@@ -10,15 +10,19 @@
 
 START paycheck_calculator
 
-    TODO: Obtain the required program input.
+    GET hours_worked 
+    GET hourly_pay_rate
 
-    IF TODO: Specify the condition for the applicable pay rule.
-        TODO: List the processing steps for the true decision path.
-    ELSE
-        TODO: List the processing steps for the false decision path.
+    IF hours_worked > 40 
+    LET overtime_hours = hours_worked - 40
+    LET regular_pay = 40 * hourly_pay_rate
+    LET overtime_pay = overtime_hours * hourly_pay_rate * 1.5
+    LET gross_pay = regular_pay + overtime_pay
+    ELSE 
+    LET gross_pay = hours_worked * hourly_pay_rate
     ENDIF
 
-    TODO: Output the calculated weekly paycheck.
+    PUT gross_pay
 
 END paycheck_calculator
 
